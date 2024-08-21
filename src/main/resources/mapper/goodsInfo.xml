@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <!--指向dao层 --> 
+<mapper namespace="com.hqyj.dao.GoodsInfoDao">
+
+<!-- 定义sql映射的结果集 -->
+<resultMap id="BaseMap" type="com.hqyj.pojo.GoodsInfoView">
+  <id property="goodsId" column="goods_id" />
+  <result property="goodsName" column="goods_name"/>
+  <result property="price" column="price"/>
+  <result property="sellerId" column="seller_id"/>
+  <result property="title" column="title"/>
+  <result property="stockNum" column="stock_num"/>
+  <result property="src" column="src"/>
+  <result property="proType" column="pro_type"/>
+</resultMap>
+<!-- 定义mybatis动态sql -->
+  <select id="query"  resultMap="BaseMap" parameterType="java.lang.Integer">
+    select
+      goods_id,price,b.brand_name,seller_id,title,stock_num,src,g.pro_type
+    from goods_info g inner join brand  b on g.brand_id = b.brand_id where goods_id =#{goodsId}
+  </select>
+
+</mapper>
