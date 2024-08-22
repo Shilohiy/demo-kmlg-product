@@ -16,6 +16,6 @@ public class Car {
     private String src;
     private String orderId;
 
-    @TableLogic
+    @TableLogic // 自带假删除，xml文件中无需实现
     private Integer deleteTag;
 }
