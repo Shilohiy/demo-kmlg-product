@@ -61,12 +61,39 @@
             <artifactId>velocity-engine-core</artifactId>
             <version>2.3</version>
         </dependency>
+
         <!--代码生成器-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.3.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.13.0.ALL</version>
+        </dependency>
+
+        <!-- Spring Boot 邮件支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; Spring Data Redis 支持 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Redis 客户端 Lettuce &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>io.lettuce.core</groupId>-->
+<!--            <artifactId>lettuce-core</artifactId>-->
+<!--            <version>6.2.4</version>-->
+<!--        </dependency>-->
+
 
     </dependencies>
 </project>

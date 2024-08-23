@@ -4,9 +4,7 @@ package com.hqyj.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hqyj.dao.CarDao;
-import com.hqyj.dao.OrderInfoMapper;
 import com.hqyj.pojo.Car;
-import com.hqyj.pojo.OrderInfo;
 import com.hqyj.pojo.ResultVo;
 import org.springframework.stereotype.Service;
 

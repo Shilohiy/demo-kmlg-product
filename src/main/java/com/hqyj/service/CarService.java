@@ -2,7 +2,6 @@ package com.hqyj.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hqyj.pojo.Car;
-import com.hqyj.pojo.OrderInfo;
 import com.hqyj.pojo.ResultVo;
 
 public interface CarService extends IService<Car> {
