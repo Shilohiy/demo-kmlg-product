@@ -8,39 +8,33 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmailSend {
-    //注入邮件发送服务类
+
     @Autowired
-    JavaMailSender javaMailSender;
+    private JavaMailSender javaMailSender;
 
     @Value("${spring.mail.username}")
     private String myEmail;
 
     /**
-     *
+     * 发送包含验证码的邮件
      * @param toEmail 收件人
      * @param subject 标题
-     * @param content  邮件正文
-     * @return
+     * @param verificationCode 验证码
+     * @return 是否成功
      */
-    public boolean send(String toEmail,String subject,String content){
-        //信封
+    public boolean sendVerificationCode(String toEmail, String subject, String verificationCode) {
+        String content = "您的验证码是：" + verificationCode;
         SimpleMailMessage message = new SimpleMailMessage();
-        //发件人
         message.setFrom(myEmail);
-        //收件人
         message.setTo(toEmail);
-        //标题
         message.setSubject(subject);
-        //正文
         message.setText(content);
-        try{
+        try {
             javaMailSender.send(message);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return false;
     }
 }
-
